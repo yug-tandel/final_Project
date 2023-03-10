@@ -1,0 +1,50 @@
+{% extends '01seller_header.html' %}
+{% load static %} 
+{% block content %}
+<div class="sidebar-overlay"></div>
+
+<!--Content Start-->
+<div class="content-start transition">
+  <div class="container-fluid dashboard">
+    <div class="content-header">
+      <h1>My Orders</h1>
+      <p></p>
+    </div>
+
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4>Latest Transaction</h4>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Product Name</th>
+                  <th scope="col">Product ID</th>
+                  <th scope="col">User</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>xyz_product</td>
+                  <td>id1</td>
+                  <td>user</td>
+                  <td>this is very nice product</td>
+                  <td><span class="text-success">Not Paid</span></td>
+                  <td>this is product description</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

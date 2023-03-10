@@ -1,0 +1,61 @@
+{% extends '01seller_header.html' %}
+{% load static %}
+{% block content %}
+	<div class="sidebar-overlay"></div>
+
+
+	<!--Content Start-->
+	<div class="content-start transition">
+		<div class="container-fluid dashboard">
+
+			<div class="content-header">
+				<h1>My Products</h1>
+				<p></p>
+			</div>
+
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<h4>Latest Transaction</h4>
+						<h>{{user_products}}</h>
+					</div>
+					<div class="card-body"> 
+					<div class="table-responsive"> 
+					<table class="table table-striped">
+						<thead>
+						  <tr>
+							<th scope="col">Product Name</th>
+							<th scope="col">Description</th>
+							<th scope="col">Date</th>
+							<th scope="col">Price</th>
+							<th scope="col">Pic</th>
+							<th scope="col">Action</th>
+						  </tr>
+						</thead>
+						<tbody>
+							{% for i in user_products %}
+							
+						  <tr>
+							<td>{{i.product_name}}</td>
+							<td>{{i.des}}</td>
+							<td>2023</td>
+							<td>${{i.price}}</td>
+							<td><span class="text-success"><img src="{{i.pic.url}}" width="150px" ></span></td>
+							<td>
+								<a href="{% url 'edit_product' i.id %}"><button class="btn btn-primary">Edit</button></a>
+								<a href="{% url 'del_product' i.id %}">
+									<button class="btn btn-primary" onclick="delThisProduct()">Delete</button>
+								</a>
+								
+							</td>
+						  </tr>
+						  {% endfor %}
+						</tbody>
+					  </table>
+					  </div>
+					</div>
+				</div>
+			</div>
+	
+	   </div>
+{% endblock %}

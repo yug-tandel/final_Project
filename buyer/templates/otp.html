@@ -1,0 +1,38 @@
+{% extends 'main.html' %} {% load static %} {% block content %}
+<div class="container">
+  {{say}}
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+    </div>
+    <div class="modal-body modal-body-sub_agile">
+      <div class="main-mailposi">
+        <span class="fa fa-envelope-o" aria-hidden="true"></span>
+      </div>
+      <div class="modal_body_left modal_body_left1">
+        <h3 class="agileinfo_sign">OTP Verification!!!!</h3>
+
+        <form action="{% url 'otp' %}" method="POST">
+          {% csrf_token %}
+          {{msg}}
+          <div class="styled-input agile-styled-input-top">
+            <input
+              type="text"
+              placeholder="enter otp"
+              name="u_otp"
+              required=""
+            />
+          </div>
+
+          <input type="submit" value="Verify" />
+        </form>
+
+        <p>
+          <a href="#">By clicking register, I agree to your terms</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
